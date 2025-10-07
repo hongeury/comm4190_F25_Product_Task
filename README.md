@@ -6,5 +6,5 @@
   
 2. Product B: Plaintain Lite
   Image: plaintain lite.png
-  Notebook:
+  Notebook: plaintainlite_product_description.ipynb
 
