@@ -8,3 +8,8 @@
   Image: plaintain lite.png
   Notebook: plaintainlite_product_description.ipynb
 
+3. AB tesiting prompts
+   LLM_Prompts.pdf
+  
+4. AB testing results
+   A:B Testing Results.pdf
