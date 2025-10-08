@@ -5,8 +5,8 @@
    - Notebook: CuzcoCrunch.pdf
   
 2. Product B: Plaintain Lite
-  - Image: plaintain lite.png
-  - Notebook: plaintainlite_product_description.ipynb, Product names_PlantainLite.pdf
+   - Image: plaintain lite.png
+   - Notebook: plaintainlite_product_description.ipynb, Product names_PlantainLite.pdf
 
 3. AB tesiting prompts
    - LLM_Prompts.pdf
