@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuzco Crunch - Premium Andean Snacks</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #764ba2;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #764ba2;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        .product-section {
+            background: white;
+            padding: 5rem 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .product-info h2 {
+            color: #764ba2;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #ff6b6b;
+            font-weight: bold;
+            margin: 1.5rem 0;
+        }
+
+        .features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .features li {
+            padding: 0.8rem 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .features li:before {
+            content: "✓ ";
+            color: #4ecdc4;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-right: 0.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .benefits {
+            background: #f8f9fa;
+            padding: 5rem 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials {
+            background: white;
+            padding: 5rem 0;
+        }
+
+        .testimonial {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #764ba2;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">🌄 Cuzco Crunch</a>
+            <ul class="nav-links">
+                <li><a href="#product">Product</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#order">Order Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Experience the Andes in Every Bite</h1>
+            <p>Premium quinoa snacks inspired by the ancient flavors of Cusco, Peru</p>
+            <a href="#order" class="cta-button">Shop Now →</a>
+        </div>
+    </section>
+
+    <section id="product" class="product-section">
+        <div class="container">
+            <h2 class="section-title">Cuzco Crunch</h2>
+            <p class="section-subtitle">Authentic Andean flavors, modern snack innovation</p>
+            
+            <div class="product-grid">
+                <div>
+                    <img src="Cuzco_Crunch_1.jpg" alt="Cuzco Crunch Product" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h2>Premium Quinoa Snacks</h2>
+                    <div class="price">$8.99</div>
+                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                        Discover the perfect blend of ancient Incan superfoods and modern snacking. 
+                        Cuzco Crunch brings you the authentic taste of the Andes with every crispy, 
+                        satisfying bite.
+                    </p>
+                    
+                    <ul class="features">
+                        <li>Made with premium Peruvian quinoa</li>
+                        <li>100% natural ingredients</li>
+                        <li>High protein & fiber content</li>
+                        <li>Gluten-free & non-GMO</li>
+                        <li>Rich in essential amino acids</li>
+                        <li>Sustainably sourced</li>
+                    </ul>
+
+                    <a href="#order" class="cta-button" style="display: block; text-align: center; margin-top: 2rem;">Add to Cart</a>
+                </div>
+            </div>
+
+            <div style="margin-top: 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <img src="Cuzco_Crunch_2.jpg" alt="Cuzco Crunch Product View 2" class="product-image">
+                <img src="Cuzco_Crunch_3.jpg" alt="Cuzco Crunch Product View 3" class="product-image">
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Choose Cuzco Crunch?</h2>
+            <p class="section-subtitle">Superfoods meet superior taste</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌾</div>
+                    <h3>Superfood Power</h3>
+                    <p>Quinoa is a complete protein containing all nine essential amino acids, making it perfect for active lifestyles.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏔️</div>
+                    <h3>Authentic Origins</h3>
+                    <p>Sourced directly from the Andean highlands where quinoa has been cultivated for over 5,000 years.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💚</div>
+                    <h3>Healthy Snacking</h3>
+                    <p>Low in calories, high in nutrients. Perfect for those who want to snack smart without compromising on flavor.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌍</div>
+                    <h3>Sustainable</h3>
+                    <p>We support local Peruvian farmers and use eco-friendly packaging to minimize our environmental impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    "I've tried countless healthy snacks, but Cuzco Crunch is in a league of its own. 
+                    The flavor is incredible and I love that it's packed with protein!"
+                </p>
+                <p class="testimonial-author">— Sarah M., Health Enthusiast</p>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    "Finally, a snack that's both delicious and nutritious! My kids love it, and I love 
+                    that it's gluten-free and made with real, whole ingredients."
+                </p>
+                <p class="testimonial-author">— Michael R., Parent</p>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    "As someone who's visited Peru, I can say Cuzco Crunch captures the authentic taste 
+                    of the Andes. It's like a trip to Cusco in every bag!"
+                </p>
+                <p class="testimonial-author">— Jennifer L., Traveler</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="product-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title" style="color: white;">Ready to Taste the Andes?</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9); font-size: 1.3rem;">
+                Join thousands of satisfied customers who have discovered the perfect snack
+            </p>
+            <a href="#" class="cta-button" style="margin-top: 2rem;">Order Now - $8.99</a>
+            <p style="margin-top: 1rem; opacity: 0.9;">Free shipping on orders over $25</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cuzco Crunch. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">Made with ❤️ in the spirit of the Andes</p>
+        </div>
+    </footer>
+</body>
+</html>
+
